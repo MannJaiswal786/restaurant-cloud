@@ -2,8 +2,8 @@
 
 namespace Illuminate\View\Compilers;
 
-use Illuminate\Filesystem\Filesystem;
 use InvalidArgumentException;
+use Illuminate\Filesystem\Filesystem;
 
 abstract class Compiler
 {
@@ -48,7 +48,7 @@ abstract class Compiler
      */
     public function getCompiledPath($path)
     {
-        return $this->cachePath.'/'.sha1('v2'.$path).'.php';
+        return $this->cachePath.'/'.sha1($path).'.php';
     }
 
     /**
